@@ -1,0 +1,87 @@
+/* 
+    Rendering 
+    - Rendring kontrolleras av
+        - elementtaggar 
+            - <p>, <select>
+*/
+
+/*
+    CSS - Cascading Style Sheets 
+
+    - separerar innehåll från layout 
+*/ 
+
+/*
+    CSS selection är baserat på mönster 
+    - instanser av element: <h1> 
+    - alla element av samma klass <divclass="my-syle">
+    - element med givet ID: <divid="my-tag">
+    - Pseudo classer (ofta beroende på händelser): focus, hover, visited, valid 
+    - pseudo element: nth-child(2), only-child, ...
+    - attributvärden: [title~="flower"]
+
+    matchningsmönster kan kombineras
+*/ 
+
+/*
+    exempel
+*/
+
+/* element*/
+div { color: blue; boder: 1px;}
+/*id, <p id="my-blue-box">*/
+#my-blue-box {background-color: lightblue; }
+/* class, <div class="center"> */
+.center { text-align: center; color: red; }
+/* element och and, <p class="center"> */
+p.center { text-align:center; color: green; }
+/* inside */
+div p { text-align: center; color: green; }
+/* all p with a parent div */
+div > p { text-align: center; color: green; }
+/* directly after */
+div + p { text-align: cetner; color: green; }
+/* event */ 
+a:hover {background-color: lightblue; }
+
+/*
+    I webbläsaren är allting refererat till boxar. 
+    Content - Innehåller i boxen. Storlek bestäms utifrån innehållet.
+    Padding - "tomt utrymme". Man kan bestämma storlek på denna
+    Border  - En ram. Man kan sätta sotlekt, färg, egenskaper (solid/streckad)
+    Margin  - Det utanför margin är den totala storleken på boxen (det de andra elementen ser)
+
+    När en sida byggs börjar man högst upp till vänster. Därefter byggs saker på åt höger tills att det inte får plats med er. 
+    Därefter sker ett radbryt. (tänk text editor) 
+    Header börjar också på ny rad.
+
+    I CSS kan man också välja hur boxarna ska renderas 
+    - CSS properties for layout (positionering relativt annat)
+        - Display:      block, inline, none, flex, ...
+        - Visibility:   visible, hidden (hålrum, en dold), ...
+        - Position:     static (statisk plats på sida), absolute, fixed, realtive, ...
+        - Overflow:     visible, hidden, scroll, auto, ... (om ett element inte får plats på samma rad)
+        - Z-index:       auto, number
+*/ 
+
+/*
+    Framework
+
+    Att skapa en bra layout kostar. Således görs detta sällan.
+        - Man behöver testning för olika browsers 
+        - Man kan använda eller extenda existerande:
+            - Bootstrap         - Kommer från Twitter eller facebook
+            - Material design   - Kommer från Google. Används i android
+    Dessa kan plockas hem som ramar och modifieras. 
+*/
+
+/*
+    DOM - Document Object Model 
+
+    En hemsida/html är ett träd - kallas för DOM
+    noderna är HTML element
+    HTML attribut är attribut i noderna
+    <html> är roten i trädet
+
+    
+*/
