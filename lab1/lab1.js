@@ -35,6 +35,7 @@ class Salad {
     }
 }
 
+//Funkar inte än. Skriver ut sallad
 Salad.prototype.price = function() {
     return this.ingredients.reduce((accumulated, ingredient) => accumulated + imported.inventory[ingredient].price);
 };
