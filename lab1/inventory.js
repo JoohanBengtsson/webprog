@@ -7,6 +7,7 @@ exports.inventory = {
     'Sallad + Quinoa': {price: 10, foundation: true, vegan: true},
   
     'Kycklingfilé': {price: 10, protein: true},
+    'Bacon': {price: 10, protein: true},
     'Rökt kalkonfilé': {price: 10, protein: true},
     'Norsk fjordlax': {price: 30, protein: true},
     'Handskalade räkor från Smögen': {price: 40, protein: true},
