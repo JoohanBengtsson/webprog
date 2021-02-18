@@ -1,100 +1,142 @@
-<!-- 
-    Terminologi: 
+<!--
+    HTML - Hyper Text Markup Language
+    alla filer måste sluta på .html
+    "index.html" är roten till en hemsida.
+
+    Generellt upplägg i html
+    <tagname>content</tagname>
+
+    Terminologi:
 
     Client-server (backend-frontend)
     Datorkommunikation. Ansvar fördelas genom en client (det användaren sitter vid)
     och en server. All kommunikation mellan server och webbapplikationen måste start
     i clienten (webbapplikationen). T.ex. måste en webbapplikation fråga "har det kommit något nytt mail".
-    Server kan inte skicka detta på egen hand. 
+    Server kan inte skicka detta på egen hand.
 
-    Static web pages 
-    statisk webbsida innebär att innehåller på hemsidan är genererat statiskt. 
-    Det finns en HTML-sida på servern. Varje gång en client frågar om denna skickas exakt samma sida. 
+    Static web pages
+    statisk webbsida innebär att innehåller på hemsidan är genererat statiskt.
+    Det finns en HTML-sida på servern. Varje gång en client frågar om denna skickas exakt samma sida.
     D.v.s. filen är skapad i förvägen och lagras färdig
 
-    Dynamic web page 
-    Man skapar HTML-koden när webbläsaren frågar efter sidan. 
-    D.v.s. hemsidan byggs vid varje förfrågan. Man kan alltså dynamisk ändra innehåller på hemsida. 
+    Dynamic web page
+    Man skapar HTML-koden när webbläsaren frågar efter sidan.
+    D.v.s. hemsidan byggs vid varje förfrågan. Man kan alltså dynamisk ändra innehåller på hemsida.
 
     Content Management Systems (CMC)
-    t.ex. WordPress, Drupal. 
-    Till för att skapa innehåller på hemsidor. 
-    Ingår inte direkt i kursen 
+    t.ex. WordPress, Drupal.
+    Till för att skapa innehåller på hemsidor.
+    Ingår inte direkt i kursen
 
-    Single page web application 
+    Single page web application
     En variant av en dynamisk hemsida. När man startar applikationen laddas den ner till webbläsaren.
     Sen kommer applikationen, JS-koden, ta över och hantera all interaktion mellan client och server.
-    Byggs oftast med ramverk 
+    Byggs oftast med ramverk
 
-    Web applicaiton framework 
-    t.ex. react och angular. 
+    Web applicaiton framework
+    t.ex. react och angular.
 
-    Responsive design 
-    Teknisk egenskap. En hemsida anpassas efter de tekniska förutsättningarna i clienten. 
+    Responsive design
+    Teknisk egenskap. En hemsida anpassas efter de tekniska förutsättningarna i clienten.
     t.ex. skärmstorlek (telefon eller dator)
 
-    Universal design 
-    Handlar om användarna. Anpassas också. 
-    System utformas efter användaren förutsättningar. 
+    Universal design
+    Handlar om användarna. Anpassas också.
+    System utformas efter användaren förutsättningar.
     Typiskt: anpasssat efter blinda och döva
 -->
 
-<!-- 
-    Standardisering 
+<!--
+    Standardisering
 
-    Internet Engineering Task Force (IETF) 
-    Sätter standarder för internet genom RFC. 
+    Internet Engineering Task Force (IETF)
+    Sätter standarder för internet genom RFC.
 
 
     World Wide Web Consortium (W3C)
     Tar fram standard för HTML.
     Tungrodd och sluten organisation.
 
-    European Computer Manufacturers Association (ECMA) 
+    European Computer Manufacturers Association (ECMA)
     Standardiserar JavaScript (d.v.s. ECMAScript som är stardardnamnet).
 -->
 
-<!-- 
+<!--
     Character encoding
 
-    Generellt är allting kodar med text, d.v.s. tecken i längre sekvenser. 
-    Man behöver därför ett konsensus om hur man ska tolka tecken. 
+    Generellt är allting kodar med text, d.v.s. tecken i längre sekvenser.
+    Man behöver därför ett konsensus om hur man ska tolka tecken.
 
-    Hur kodar man då tecken? 
-    - Alla tecken har samma hängd bitar 
+    Hur kodar man då tecken?
+    - Alla tecken har samma hängd bitar
     - Varierande mängd bitar per tecken. (jämför med Hoffman coding)
 
-    Standarder: 
-    - Unicode och UTF8. 
+    Standarder:
+    - Unicode och UTF8.
     - IDO-8859-1/latin 1
-    - UTF8 håller på att ta över världen. 
+    - UTF8 håller på att ta över världen.
 
 -->
 
 <!--
-    HTML - element 
+    HTML - element
 
 
-    Semantic tags 
+    Semantic tags
     <h1>, <h2>, <p>, <abbr>, <code>, <samp>, <kbd>
-    
+
     Structure
     <table>, <ul>
 -->
 
-<!-- 
-    Data: 
-    - Mellan taggar 
+<!--
+    Data:
+    - Mellan taggar
         - text
 -->
+<!DOCTYPE html><!-- denna tag borde finnas i alla HTML dokument.
+  Beskriver vilket typ av dokument det är.
+  Ovan är HTML5 (eller senaste?)-->
+<html lang="en" dir="ltr">
+  <head>
+    <title>HTML-träning</title>
+  </head>
+  <body>
+    <h1>My Headline</h1>
+    <h2>My h2</h2>
+    <h3>My h3</h3>
+    <h4>My h4</h4>
+    <h5>My h5</h5>
+    <h6>My h6</h6>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor <strong>incididunt ut labore </strong>
+      et dolore <em>magna aliqua</em>. <!--fet / italic -->
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <!-- Paragrafer får lite avstånd mellan varandra. Exakt 1em
+    1em är ett avståndsmått i HTML-->
+    <p>
+      <a href="http://cs.lth.se" target="_blank">Lorem ipsum dolor sit amet</a>,
+      consectetur adipisicing elit,
+      <!-- attribut i tags läggs alltid i starttaggen -->
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <br /> <!-- selfclosing tag -->
+  </body>
+</html>
 
-<h1>My Headline</h1>
-
-<!-- 
+<!--
     atribut
-    - Texten visas inte på skärmen 
+    - Texten visas inte på skärmen
     - bara text
 -->
-<ahref="http://cs.lth.se">my link</ahref>
-
-

@@ -61,7 +61,7 @@ GourmetSalad.prototype.price = function() {
     let i = -1;
     let portions = this.portions;
     let price = this.ingredients.reduce(function (accumulator, ingredient) {
-        i=i+1;
+        i++;
         return accumulator + (imported.inventory[ingredient].price * portions[i])
     }, initialValue)
     return price;
