@@ -3,16 +3,15 @@ import React, { Component } from 'react';
 export default class ViewOrder extends Component {
     render () {
         const handlePlaceOrder = () => {
-            this.props.placeOrder((ok,empty)=>{
-              if (this.props.order.length < 1)
-                //document.getElementById("message").innerHTML = "Lägg till en sallad först vetja!";
-                this.props.history.push('/empty-order')
-              else{
-                this.props.clearOrder()
-                //document.getElementById("message").innerHTML = (ok)?"Sallad beställd":"Something went wrong...";
-                this.props.history.push('/order-placed')
-              }
-            })
+          this.props.placeOrder((ok,empty)=>{
+              this.props.clearOrder()
+              this.props.history.push('/order-placed')
+          })
+        }
+
+        const handleClear = () => {
+          this.props.clearOrder()
+          this.props.history.push('/compose-salad')
         }
 
         if(this.props.order.length > 0) {
@@ -30,7 +29,7 @@ export default class ViewOrder extends Component {
                 </ul>
                 <button type = "button"
                     className = "btn btn-danger clear"
-                    onClick = {this.props.clearOrder}>
+                    onClick = {handleClear}>
                         Rensa ordrar
                 </button>
                 <button className="btn btn-primary" 

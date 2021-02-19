@@ -11,7 +11,6 @@ class ComposeSalad extends Component {
           proteins: [],
           extras: [],
           dressing: "",
-          price: 0
       };
       //Handlar .bind(this) om att behålla referensen till objektet när man lämanr det för t.ex. standardbiblioteket?
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,14 +20,6 @@ class ComposeSalad extends Component {
     event.target.parentElement.classList.add("was-validated");
     const name = event.target.getAttribute("name");
     const value = event.target.value;
-
-    try {
-      const newPrice = this.state.price + this.props.inventory[value].price;
-      this.setState({price: newPrice});
-    } catch (err) {
-      console.error(err)
-    }
-    
 
     if(name === "foundation") {
       this.setState({foundation: value});
@@ -43,13 +34,6 @@ class ComposeSalad extends Component {
     const name = event.target.getAttribute("name");
     const value = event.target.value;
     let index;
-
-    try {
-      const newPrice = this.state.price + this.props.inventory[value].price;
-      this.setState({price: newPrice});
-    } catch (err) {
-      console.error(err)
-    }
 
     if(name === "protein") {
       if(event.target.checked) {
@@ -75,19 +59,18 @@ class ComposeSalad extends Component {
     event.preventDefault();
 
     if(event.target.checkValidity() === true) {
-      let salad = this.props.selectedSalad || new Salad();
+      let salad = new Salad();
       salad.foundation = this.state.foundation;
       salad.dressing = this.state.dressing;
       salad.proteins = this.state.proteins;
       salad.extras = this.state.extras;
-      this.props.addSalad(salad);
+      this.props.addSalad(salad, this.props.inventory);
 
       this.setState({
         foundation: "",
           proteins: [],
           extras: [],
           dressing: "",
-          price: 0
       });
       this.props.history.push('/view-order');
     }

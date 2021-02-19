@@ -91,8 +91,7 @@ class App extends Component {
   render() {
     const composeElements = (params) => <ComposeSalad {...params} inventory={this.state.inventory} addSalad = {this.addSalad} />;
     const viewElements = (params) => <ViewOrder {...params} order = {this.state.order} clearOrder = {this.clear} remove={this.deleteSalad} placeOrder={this.placeOrder}/>;
-    const empty = (props) => <h2>Beställ något först!</h2>
-    const placed = (props) => <h2>Din order är placerad!</h2>
+    const placed = (props) => <h3>Din order är placerad!</h3>
     return (
       <Router>
         <div>
@@ -120,7 +119,6 @@ class App extends Component {
           <Route path = "/compose-salad" render={composeElements}/>
           <Route path = "/view-order" render={viewElements}/>
           <Route path = "/order-placed" render={placed}/>
-          <Route path = "/empty-order" render={empty}/>
         </div>
       </Router>
     );
